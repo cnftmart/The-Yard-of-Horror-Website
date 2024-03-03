@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap");
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::-moz-selection {
+    background: #332c22;
+  }
+  ::selection {
+    background: #332c22;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  button {
+    outline: none;
+  }
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+  body {
+    color: white;
+    overflow: overlay;
+    @apply font-Roboto;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(104, 104, 104, 0.8);
+    border-radius: 30px;
+  }
+  /* Variables */
+  :root {
+    --boxshadow25: rgba(255, 255, 255, 0.25);
+    --boxshadow50: rgba(255, 255, 255, 0.5);
+  }
+  body {
+    background-image: url("../public/artworkmobile.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% !important;
+  }
+  @media (min-width: 640px) {
+    body {
+      background-image: url("../public/artwork.png");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 100% !important;
+    }
+  }
+}
+
+@layer components {
+  /* Navbar */
+  /* Hrefs */
+  .navanimation {
+    @apply transition duration-300 ease-in-out hover:scale-110;
+    text-shadow: 0px 0px 22px var(--boxshadow25);
+  }
+  .navanimation:hover {
+    text-shadow: 0px 0px 40px var(--boxshadow50);
+  }
+  /* Mint Button */
+  .mintanimation {
+    border: 2px solid #ffffff;
+    box-shadow: 0px 0px 22px 3px var(--boxshadow25);
+    border-radius: 16px;
+    font-weight: 700;
+    text-shadow: 0px 0px 22px var(--boxshadow25);
+  }
+  .mintanimation:hover {
+    background-color: var(--boxshadow25);
+  }
+  /* Dropdownmenu 640px or lower */
+  .dropdownanimation {
+    box-shadow: 0px 0px 22px 3px var(--boxshadow25);
+    font-weight: 700;
+    text-shadow: 0px 0px 22px var(--boxshadow25);
+  }
+  .shadowmobile{
+    text-shadow: 1px 1px 2px #000000;
+  }
+  /* Team */
+  .box {
+    /* transition: box-shadow 0.3s; */
+    @apply scale-100 transition duration-300 ease-in-out;
+  }
+  .box:hover {
+    filter: drop-shadow(0px 0px 22px var(--boxshadow50));
+    @apply scale-[1.07] transition duration-300 ease-in-out;
+  }
+  /* FAQ section */
+  .questionanimation {
+    translate: scaleZ(0);
+    opacity: 1;
+  }
+  .questionanimation:hover {
+    animation: changeBgColor 4s infinite;
+    @apply transition-transform duration-300;
+  }
+  .mobilequestionanimation:hover,
+  .footernanimation:hover {
+    animation: changeBgColor 4s infinite;
+    @apply transition-transform duration-300;
+  }
+  @keyframes changeBgColor {
+    0% {
+      background: #342b22;
+    }
+    50% {
+      background: #695038;
+    }
+    100% {
+      background: #342b22;
+    }
+  }
+}
